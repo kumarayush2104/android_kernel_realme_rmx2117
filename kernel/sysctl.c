@@ -334,6 +334,12 @@ int sysctl_launcher_boost_enabled = 0;
 int sysctl_animation_type = 0;
 #endif /* OPLUS_FEATURE_UIFIRST */
 
+#ifdef CONFIG_CAMERA_OPT
+int sysctl_camera_opt_enabled=1;
+#else
+int sysctl_camera_opt_enabled=0;
+#endif
+
 #if defined (CONFIG_SCHED_WALT) && defined (OPLUS_FEATURE_UIFIRST)
 int sysctl_slide_boost_enabled = 0;
 int sysctl_boost_task_threshold = 51;

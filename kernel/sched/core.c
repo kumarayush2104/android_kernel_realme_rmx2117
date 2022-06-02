@@ -4699,7 +4699,7 @@ void trace_begin(char *name)
 	preempt_enable();
 }
 
-void trace_end()
+void trace_end(void)
 {
 
 	__mt_update_tracing_mark_write_addr();
@@ -4708,7 +4708,7 @@ void trace_end()
 	preempt_enable();
 }
 
-void record_trace_callback()
+void record_trace_callback(void)
 {
 	int i = 0 ;
 	char caller[256] = {0};

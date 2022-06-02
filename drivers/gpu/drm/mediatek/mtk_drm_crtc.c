@@ -5882,7 +5882,7 @@ void mtk_wait_TE(int te_num) {
 	}
 }
 
-void hbm_notify_fingerprint_if_neccessary() {
+void hbm_notify_fingerprint_if_neccessary(void) {
 	if (te_remain == 0) return;
 
 	te_remain --;
@@ -5895,27 +5895,6 @@ void hbm_notify_fingerprint_if_neccessary() {
 }
 
 int hbm_eof_flag = 0;
-
-int te_remain = 0;
-void mtk_wait_TE(int te_num) {
-	if (te_remain == 0) {
-		DDPINFO("%s: start to wait %d TE\n",__func__, te_num);
-		te_remain = te_num;
-	}
-}
-
-void hbm_notify_fingerprint_if_neccessary() {
-	if (te_remain == 0) return;
-
-	te_remain --;
-	if (te_remain == 0) {
-		DDPPR_ERR("%s: send uiready to fp\n", __func__);
-		fingerprint_send_notify(1);
-	} else {
-		DDPINFO("%s: wait to send uiready to fp, te_remain=%d\n",__func__, te_remain);
-	}
-}
-
 int framedone_remain = 0;
 void mtk_wait_framedone(int fd_num) {
 	if (framedone_remain == 0) {
@@ -5924,7 +5903,7 @@ void mtk_wait_framedone(int fd_num) {
 	}
 }
 
-void hbm_notify_fingerprint_if_neccessary_vdo() {
+void hbm_notify_fingerprint_if_neccessary_vdo(void) {
 	if (framedone_remain == 0) return;
 
 	framedone_remain --;

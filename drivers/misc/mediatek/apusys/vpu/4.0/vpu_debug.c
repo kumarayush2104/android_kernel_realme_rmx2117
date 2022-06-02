@@ -26,24 +26,6 @@
 
 #define MAX_USER_SETTING_VPU_LATENCY_MS (3000)
 
-enum message_level {
-	VPU_DBG_MSG_LEVEL_NONE,
-	VPU_DBG_MSG_LEVEL_CTRL,
-	VPU_DBG_MSG_LEVEL_CTX,
-	VPU_DBG_MSG_LEVEL_INFO,
-	VPU_DBG_MSG_LEVEL_DEBUG,
-	VPU_DBG_MSG_LEVEL_TOTAL,
-};
-
-struct vpu_message_ctrl {
-	unsigned int mutex;
-	int head;
-	int tail;
-	int buf_size;
-	unsigned int level_mask;
-	unsigned int data;
-};
-
 u32 vpu_klog;
 
 const char *g_vpu_prop_type_names[VPU_NUM_PROP_TYPES] = {

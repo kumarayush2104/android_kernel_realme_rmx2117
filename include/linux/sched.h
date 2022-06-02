@@ -221,6 +221,10 @@ extern int sysctl_animation_type;
 #define LAUNCHER_SI_EXIT (5)
 #endif /* OPLUS_FEATURE_UIFIRST */
 
+#ifdef CONFIG_CAMERA_OPT
+extern int sysctl_camera_opt_enabled;
+#endif
+
 #if defined (CONFIG_SCHED_WALT) && defined (OPLUS_FEATURE_UIFIRST)
 extern int sysctl_slide_boost_enabled;
 extern int sysctl_boost_task_threshold;
@@ -1389,6 +1393,10 @@ struct task_struct {
 	u64 enqueue_time;
 	u64 dynamic_ux_start;
 #endif /* OPLUS_FEATURE_UIFIRST */
+
+#ifdef CONFIG_CAMERA_OPT
+	int camera_opt;
+#endif
 
 #ifdef CONFIG_MEMCG
 	struct mem_cgroup		*memcg_in_oom;

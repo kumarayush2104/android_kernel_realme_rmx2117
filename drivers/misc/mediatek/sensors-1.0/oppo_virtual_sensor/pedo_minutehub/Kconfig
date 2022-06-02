@@ -1,4 +1,3 @@
-
 config OPLUS_FEATURE_PEDO_MINUTE
 	bool "pedo_minutehub for MediaTek package"
 	default n
