@@ -179,7 +179,7 @@ int vcu_buffer_flush_all(struct device *dev, struct mtk_vcu_queue *vcu_queue);
  *
  * Return:      Return 0 if it is ok, otherwise failed
  **/
-int vcu_buffer_cache_sync(struct device *dev, struct mtk_vcu_queue *vcu_queue,
+extern int vcu_buffer_cache_sync(struct device *dev, struct mtk_vcu_queue *vcu_queue,
 	dma_addr_t dma_addr, size_t size, int op);
 
 #endif
